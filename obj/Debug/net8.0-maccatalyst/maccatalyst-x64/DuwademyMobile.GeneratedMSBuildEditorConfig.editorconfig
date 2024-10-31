@@ -34,6 +34,36 @@ build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.MainPage.xa
 build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
 build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
 
+[D:/GitHub/ProgMob/DuwademyMobile/Pages/AddCategory.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.AddCategory.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AddCategory.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AddCategory.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/Pages/AddCourse.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.AddCourse.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AddCourse.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AddCourse.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/Pages/Categories.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.Categories.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Categories.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Categories.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/Pages/Courses.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.Courses.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Courses.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Courses.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/Pages/Home.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.Home.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Home.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Home.xaml
+
 [D:/GitHub/ProgMob/DuwademyMobile/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Resources.Styles.Colors.xaml
