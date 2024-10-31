@@ -1,0 +1,12 @@
+D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\DuwademyMobile.csproj.AssemblyReference.cache
+D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauiimage.inputs
+D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauifont.inputs
+D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauisplash.inputs
+D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\mauimanifest.stamp
+D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.g.i.cs
+D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.g.cs
+D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\XamlTypeInfo.g.cs
+D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.xaml
+D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\Platforms\Windows\App.xbf
+D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\XamlSaveStateFile.xml
+D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\DuwademyMobile.GeneratedMSBuildEditorConfig.editorconfig

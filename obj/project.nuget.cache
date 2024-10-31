@@ -1,9 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "fmgi78U8Dm4=",
+  "dgSpecHash": "YgEFRQRG24k=",
   "success": true,
   "projectFilePath": "D:\\GitHub\\ProgMob\\DuwademyMobile\\DuwademyMobile.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\hp394\\.nuget\\packages\\communitytoolkit.mvvm\\8.3.2\\communitytoolkit.mvvm.8.3.2.nupkg.sha512",
     "C:\\Users\\hp394\\.nuget\\packages\\googlegson\\2.10.1.4\\googlegson.2.10.1.4.nupkg.sha512",
     "C:\\Users\\hp394\\.nuget\\packages\\microsoft.extensions.configuration\\8.0.0\\microsoft.extensions.configuration.8.0.0.nupkg.sha512",
     "C:\\Users\\hp394\\.nuget\\packages\\microsoft.extensions.configuration.abstractions\\8.0.0\\microsoft.extensions.configuration.abstractions.8.0.0.nupkg.sha512",
