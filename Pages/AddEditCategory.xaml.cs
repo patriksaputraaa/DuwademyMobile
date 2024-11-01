@@ -22,7 +22,7 @@ namespace DuwademyMobile.Pages
             }
             else
             {
-                _viewModel.Initialize(); // For a new category
+                _viewModel.Initialize(null); // For a new category
             }
         }
 
