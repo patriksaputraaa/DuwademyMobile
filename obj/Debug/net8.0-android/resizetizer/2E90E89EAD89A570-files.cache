@@ -1,4 +1,15 @@
-﻿obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\dotnet_bot.png
+﻿obj\Debug\net8.0-android\resizetizer\r\drawable\aspcore.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\cat.jpg
+obj\Debug\net8.0-android\resizetizer\r\drawable\category.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\course.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\default_image.jpg
+obj\Debug\net8.0-android\resizetizer\r\drawable\delete.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\home.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\logo.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\maui.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\menu.png
+obj\Debug\net8.0-android\resizetizer\r\drawable\update.png
+obj\Debug\net8.0-android\resizetizer\r\drawable-hdpi\dotnet_bot.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-mdpi\dotnet_bot.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xhdpi\dotnet_bot.png
 obj\Debug\net8.0-android\resizetizer\r\drawable-xxhdpi\dotnet_bot.png

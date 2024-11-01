@@ -2,11 +2,69 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DuwademyMobile.Pages.Home"
-             Title="Home">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:viewmodel="clr-namespace:DuwademyMobile.ViewModel"
+             xmlns:data="clr-namespace:DuwademyMobile.Data"
+             x:DataType="viewmodel:CoursesViewModel"
+             Title="Duwa Academy"
+             BackgroundColor="#F7F7F7">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <!-- Title -->
+            <Label Text="Available Courses" 
+                   FontSize="24" 
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextColor="#333" 
+                   Margin="0,0,0,20"/>
+
+            <!-- Search Bar and Button -->
+            <StackLayout Orientation="Horizontal" Spacing="10">
+                <SearchBar Placeholder="Search courses..."
+                           Text="{Binding SearchText}" 
+                           Margin="0,0,0,10" 
+                           TextColor="Black"
+                           SearchButtonPressed="OnSearchButtonPressed" />
+                <Button Text="Search" 
+                        Command="{Binding FilterCoursesCommand}" 
+                        BackgroundColor="LightCoral" 
+                        TextColor="Black" 
+                        WidthRequest="80" />
+            </StackLayout>
+
+
+            <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding LoadDataCommand}">
+                <CollectionView ItemsSource="{Binding FilteredCourses}" 
+                                SelectedItem="{Binding SelectedCourse, Mode=TwoWay}"
+                                SelectionChangedCommand="{Binding CourseSelectedCommand}"
+                                SelectionMode="Single">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate x:DataType="data:Course">
+                            <Frame CornerRadius="10" Margin="10" Padding="10" HasShadow="True" BackgroundColor="White">
+                                <StackLayout Orientation="Horizontal" Spacing="10">
+                                    <Image x:Name="CourseImage" 
+                                           HeightRequest="80" 
+                                           WidthRequest="80" 
+                                           Aspect="AspectFill" 
+                                           Source="{Binding ImageSource}" />
+                                    <StackLayout>
+                                        <Label Text="{Binding Name}" FontSize="18" FontAttributes="Bold" TextColor="#333"/>
+                                        <Label Text="{Binding Description}" FontSize="14" TextColor="Gray" LineBreakMode="TailTruncation"/>
+                                        <Label Text="{Binding Duration, StringFormat='{0} hours'}" FontSize="12" TextColor="#888"/>
+                                    </StackLayout>
+                                </StackLayout>
+                            </Frame>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                    <CollectionView.EmptyView>
+                        <Label Text="No courses available."
+                               FontSize="18"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               TextColor="Gray" />
+                    </CollectionView.EmptyView>
+                </CollectionView>
+            </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DuwademyMobile.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -7,6 +8,7 @@ using System.Threading.Tasks;
 
 namespace DuwademyMobile.Data
 {
+    [Serializable]
     public class Course
     {
         [JsonPropertyName("courseId")]
@@ -26,5 +28,7 @@ namespace DuwademyMobile.Data
 
         [JsonPropertyName("category")]
         public Category Category { get; set; }
+
+        public string ImageSource => CoursesViewModel.GetImageSource(ImageName);
     }
 }

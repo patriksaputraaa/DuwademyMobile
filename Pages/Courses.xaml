@@ -2,11 +2,105 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="DuwademyMobile.Pages.Courses"
-             Title="Courses">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+             xmlns:viewmodel="clr-namespace:DuwademyMobile.ViewModel"
+             xmlns:data="clr-namespace:DuwademyMobile.Data"
+             x:DataType="viewmodel:CoursesViewModel"
+             Title="List of Courses"
+             BackgroundColor="#F7F7F7">
+
+    <ContentPage.Content>
+        <StackLayout Padding="20">
+            <!-- Title -->
+            <Label Text="Available Courses" 
+                   FontSize="20"
+                   FontAttributes="Bold" 
+                   HorizontalOptions="Center" 
+                   TextColor="#333" 
+                   Margin="0,0,0,20"/>
+
+                <!-- Add Course Button -->
+                <Button Text="Add Course" 
+                    Command="{Binding AddNewCourseCommand}" 
+                    BackgroundColor="LightGreen" 
+                    TextColor="Black" 
+                    WidthRequest="120" 
+                    HorizontalOptions="End" 
+                    Margin="0,0,0,20"/>
+
+                <!-- Search Bar and Button -->
+                <StackLayout Orientation="Horizontal" Spacing="10">
+                    <SearchBar Placeholder="Search courses..."
+                           Text="{Binding SearchText}" 
+                           Margin="0,0,0,10" 
+                           TextColor="Black"
+                           SearchButtonPressed="OnSearchButtonPressed" />
+                    <Button Text="Search" 
+                        Command="{Binding FilterCoursesCommand}" 
+                        BackgroundColor="LightCoral" 
+                        TextColor="Black" 
+                        WidthRequest="80" />
+                </StackLayout>
+
+                <!-- Courses Table -->
+                <RefreshView IsRefreshing="{Binding IsRefreshing}" Command="{Binding LoadDataCommand}">
+                    <CollectionView ItemsSource="{Binding FilteredCourses}" 
+                                SelectedItem="{Binding SelectedCourse, Mode=TwoWay}"
+                                SelectionChangedCommand="{Binding CourseSelectedCommand}"
+                                SelectionMode="Single">
+                        <CollectionView.ItemTemplate>
+                            <DataTemplate x:DataType="data:Course">
+                                <Frame CornerRadius="10" Margin="5,5,5,0" Padding="10" HasShadow="True" BackgroundColor="White">
+                                    <Grid ColumnDefinitions="2*, 3*, Auto, Auto" RowDefinitions="Auto">
+                                        <!-- Course Info -->
+                                        <Image x:Name="CourseImage" 
+                                           HeightRequest="50"
+                                           WidthRequest="50" 
+                                           Aspect="AspectFill" 
+                                           Source="{Binding ImageSource}" 
+                                           Grid.Row="0" Grid.Column="0"/>
+                                            <StackLayout Grid.Row="0" Grid.Column="1" Padding="10,0">
+                                                <Label Text="{Binding Name}" FontSize="16" FontAttributes="Bold" TextColor="#333"/>
+                                                <!-- Smaller font -->
+                                                <Label Text="{Binding Duration, StringFormat='{0} hours'}" FontSize="10" TextColor="#888"/>
+                                                <!-- Smaller font -->
+                                            </StackLayout>
+
+                                            <!-- Update Icon Button -->
+                                            <ImageButton Source="update.png"
+                                                Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CoursesViewModel}}, Path=UpdateCourseCommand}"
+                                                 CommandParameter="{Binding .}"
+                                                 BackgroundColor="LightSkyBlue"
+                                                 WidthRequest="40"
+                                                 HeightRequest="40"
+                                                 Padding="5"
+                                                 HorizontalOptions="Center"
+                                                 VerticalOptions="Center"
+                                                 Grid.Row="0" Grid.Column="2" />
+
+                                                <!-- Delete Icon Button -->
+                                                <ImageButton Source="delete.png"
+                                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:CoursesViewModel}}, Path=DeleteCourseCommand}"
+                                                 CommandParameter="{Binding .}"
+                                                 BackgroundColor="Salmon"
+                                                 WidthRequest="40"
+                                                 HeightRequest="40"
+                                                 Padding="5"
+                                                 HorizontalOptions="Center"
+                                                 VerticalOptions="Center"
+                                                 Grid.Row="0" Grid.Column="3" />
+                                    </Grid>
+                                </Frame>
+                            </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                        <CollectionView.EmptyView>
+                            <Label Text="No courses available."
+                               FontSize="16"
+                               HorizontalOptions="Center"
+                               VerticalOptions="Center"
+                               TextColor="Gray" />
+                        </CollectionView.EmptyView>
+                    </CollectionView>
+                </RefreshView>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

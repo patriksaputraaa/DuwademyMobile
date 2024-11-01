@@ -1,0 +1,22 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DuwademyMobile.Pages.AddEditCategory"
+             xmlns:data="clr-namespace:DuwademyMobile.Data"
+             Title="Add/Edit Category">
+
+    <StackLayout Padding="20">
+        <StackLayout Padding="10">
+            <Label Text="Category Name" />
+            <Entry Text="{Binding CategoryName}" Placeholder="Enter category name" />
+
+            <Label Text="Description" />
+            <Entry Text="{Binding CategoryDescription}" Placeholder="Enter category description" />
+
+            <Button Text="Save" Command="{Binding SaveDataCommand}" />
+        </StackLayout>
+
+
+        <!--<Button Text="Save" Clicked="OnSaveClicked" />-->
+        <Button Text="Cancel" Clicked="OnCancelClicked" />
+    </StackLayout>
+</ContentPage>

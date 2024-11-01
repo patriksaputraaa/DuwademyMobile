@@ -1,0 +1,557 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>DuwademyMobile</name>
+    </assembly>
+    <members>
+        <member name="T:DuwademyMobile.ViewModel.AddEditCategoryViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.CategoryID">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.AddEditCategoryViewModel._categoryID"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.CategoryName">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.AddEditCategoryViewModel._categoryName"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.CategoryDescription">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.AddEditCategoryViewModel._categoryDescription"/>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.AddEditCategoryViewModel.saveDataCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.SaveDataCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.SaveDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.AddEditCategoryViewModel.SaveData"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.AddEditCategoryViewModel.insertCategoryCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.InsertCategoryCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.InsertCategoryCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.AddEditCategoryViewModel.InsertCategory"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.AddEditCategoryViewModel.updateCategoryCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.UpdateCategoryCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.UpdateCategoryCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.AddEditCategoryViewModel.UpdateCategory"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.AddEditCategoryViewModel.deleteCategoryCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.DeleteCategoryCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.DeleteCategoryCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.AddEditCategoryViewModel.DeleteCategory"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.AddEditCategoryViewModel.doneEditingCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.DoneEditingCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.DoneEditingCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.AddEditCategoryViewModel.DoneEditing"/>.</summary>
+        </member>
+        <member name="T:DuwademyMobile.ViewModel.CategoriesViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CategoriesViewModel.PageTitle">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CategoriesViewModel.pageTitle"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CategoriesViewModel.Categories">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CategoriesViewModel.categories"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CategoriesViewModel.FilteredCategories">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CategoriesViewModel.filteredCategories"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CategoriesViewModel.IsRefreshing">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CategoriesViewModel.isRefreshing"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CategoriesViewModel.IsBusy">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CategoriesViewModel.isBusy"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CategoriesViewModel.SelectedCategory">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CategoriesViewModel.selectedCategory"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CategoriesViewModel.SearchText">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CategoriesViewModel.searchText"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CategoriesViewModel.EditingCategory">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CategoriesViewModel.editingCategory"/>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.CategoriesViewModel.saveCategoryCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CategoriesViewModel.SaveCategoryCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CategoriesViewModel.SaveCategoryCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CategoriesViewModel.SaveCategory"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.CategoriesViewModel.loadDataCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CategoriesViewModel.LoadDataCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CategoriesViewModel.LoadDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CategoriesViewModel.LoadData"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.CategoriesViewModel.filterCategoriesCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CategoriesViewModel.FilterCategoriesCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CategoriesViewModel.FilterCategoriesCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CategoriesViewModel.FilterCategories"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.CategoriesViewModel.updateCategoryCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CategoriesViewModel.UpdateCategoryCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CategoriesViewModel.UpdateCategoryCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CategoriesViewModel.UpdateCategory(DuwademyMobile.Data.Category)"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.CategoriesViewModel.deleteCategoryCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CategoriesViewModel.DeleteCategoryCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CategoriesViewModel.DeleteCategoryCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CategoriesViewModel.DeleteCategory(DuwademyMobile.Data.Category)"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.CategoriesViewModel.addNewCategoryCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CategoriesViewModel.AddNewCategoryCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CategoriesViewModel.AddNewCategoryCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CategoriesViewModel.AddNewCategory"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.CategoriesViewModel.categorySelectedCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CategoriesViewModel.CategorySelectedCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CategoriesViewModel.CategorySelectedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CategoriesViewModel.CategorySelected"/>.</summary>
+        </member>
+        <member name="T:DuwademyMobile.ViewModel.CoursesViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.PageTitle">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CoursesViewModel.pageTitle"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.Courses">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CoursesViewModel.courses"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.FilteredCourses">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CoursesViewModel.filteredCourses"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.IsRefreshing">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CoursesViewModel.isRefreshing"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.IsBusy">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CoursesViewModel.isBusy"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.SelectedCourse">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CoursesViewModel.selectedCourse"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.SearchText">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CoursesViewModel.searchText"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.EditingCourse">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CoursesViewModel.editingCourse"/>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.CoursesViewModel.saveCourseCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CoursesViewModel.SaveCourseCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.SaveCourseCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CoursesViewModel.SaveCourse"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.CoursesViewModel.courseSelectedCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CoursesViewModel.CourseSelectedCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.CourseSelectedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CoursesViewModel.CourseSelected"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.CoursesViewModel.loadDataCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CoursesViewModel.LoadDataCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.LoadDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CoursesViewModel.LoadData"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.CoursesViewModel.filterCoursesCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CoursesViewModel.FilterCoursesCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.FilterCoursesCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CoursesViewModel.FilterCourses"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.CoursesViewModel.addNewCourseCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CoursesViewModel.AddNewCourseCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.AddNewCourseCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CoursesViewModel.AddNewCourse"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.CoursesViewModel.deleteCourseCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CoursesViewModel.DeleteCourseCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.DeleteCourseCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CoursesViewModel.DeleteCourse(DuwademyMobile.Data.Course)"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.CoursesViewModel.updateCourseCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CoursesViewModel.UpdateCourseCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.UpdateCourseCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CoursesViewModel.UpdateCourse(DuwademyMobile.Data.Course)"/>.</summary>
+        </member>
+        <member name="T:DuwademyMobile.ViewModel.HomeViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.HomeViewModel.Courses">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.HomeViewModel._courses"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.HomeViewModel.IsRefreshing">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.HomeViewModel._isRefreshing"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.HomeViewModel.IsBusy">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.HomeViewModel._isBusy"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.HomeViewModel.SelectedCourse">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.HomeViewModel._selectedCourse"/>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.HomeViewModel.courseSelectedCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.HomeViewModel.CourseSelectedCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.HomeViewModel.CourseSelectedCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.HomeViewModel.CourseSelected"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.HomeViewModel.loadDataCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.HomeViewModel.LoadDataCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.HomeViewModel.LoadDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.HomeViewModel.LoadData"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.HomeViewModel.addNewCourseCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.HomeViewModel.AddNewCourseCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.HomeViewModel.AddNewCourseCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.HomeViewModel.AddNewCourse"/>.</summary>
+        </member>
+        <member name="T:DuwademyMobile.ViewModels.AddEditCourseViewModel">
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+            <inheritdoc/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.CourseID">
+            <inheritdoc cref="F:DuwademyMobile.ViewModels.AddEditCourseViewModel._courseID"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.CourseName">
+            <inheritdoc cref="F:DuwademyMobile.ViewModels.AddEditCourseViewModel._courseName"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.CourseImageName">
+            <inheritdoc cref="F:DuwademyMobile.ViewModels.AddEditCourseViewModel._courseImageName"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.CourseDuration">
+            <inheritdoc cref="F:DuwademyMobile.ViewModels.AddEditCourseViewModel._courseDuration"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.CourseDescription">
+            <inheritdoc cref="F:DuwademyMobile.ViewModels.AddEditCourseViewModel._courseDescription"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.CourseCategory">
+            <inheritdoc cref="F:DuwademyMobile.ViewModels.AddEditCourseViewModel._courseCategory"/>
+        </member>
+        <member name="F:DuwademyMobile.ViewModels.AddEditCourseViewModel.saveDataCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.SaveDataCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.SaveDataCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModels.AddEditCourseViewModel.SaveData"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModels.AddEditCourseViewModel.insertCourseCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.InsertCourseCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.InsertCourseCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModels.AddEditCourseViewModel.InsertCourse"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModels.AddEditCourseViewModel.updateCourseCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.UpdateCourseCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.UpdateCourseCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModels.AddEditCourseViewModel.UpdateCourse"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModels.AddEditCourseViewModel.deleteCourseCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.DeleteCourseCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.DeleteCourseCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModels.AddEditCourseViewModel.DeleteCourse"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModels.AddEditCourseViewModel.doneEditingCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.DoneEditingCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModels.AddEditCourseViewModel.DoneEditingCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModels.AddEditCourseViewModel.DoneEditing"/>.</summary>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Button.TextColorTo(Microsoft.Maui.Controls.Button,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_DatePicker.TextColorTo(Microsoft.Maui.Controls.DatePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Editor.TextColorTo(Microsoft.Maui.Controls.Editor,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Entry.TextColorTo(Microsoft.Maui.Controls.Entry,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_InputView.TextColorTo(Microsoft.Maui.Controls.InputView,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Label.TextColorTo(Microsoft.Maui.Controls.Label,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_Picker.TextColorTo(Microsoft.Maui.Controls.Picker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_RadioButton.TextColorTo(Microsoft.Maui.Controls.RadioButton,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_SearchBar.TextColorTo(Microsoft.Maui.Controls.SearchBar,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="M:Microsoft.Maui.Controls.ColorAnimationExtensions_TimePicker.TextColorTo(Microsoft.Maui.Controls.TimePicker,Microsoft.Maui.Graphics.Color,System.UInt32,System.UInt32,Microsoft.Maui.Easing,System.Threading.CancellationToken)">
+            <summary>
+            Animates the TextColor of an <see cref = "T:Microsoft.Maui.ITextStyle"/> to the given color
+            </summary>
+            <param name = "element"></param>
+            <param name = "color">The target color to animate the <see cref = "P:Microsoft.Maui.ITextStyle.TextColor"/> to</param>
+            <param name = "rate">The time, in milliseconds, between the frames of the animation</param>
+            <param name = "length">The duration, in milliseconds, of the animation</param>
+            <param name = "easing">The easing function to be used in the animation</param>
+            <param name = "token"><see cref = "T:System.Threading.CancellationToken"/></param>
+            <returns>Value indicating if the animation completed successfully or not</returns>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CategoryID">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CategoryID" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CategoryName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CategoryName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CategoryDescription">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CategoryDescription" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CourseID">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CourseID" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CourseName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CourseName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CourseImageName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CourseImageName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CourseDuration">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CourseDuration" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CourseDescription">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CourseDescription" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.CourseCategory">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "CourseCategory" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.PageTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "PageTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Categories">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Categories" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FilteredCategories">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FilteredCategories" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsRefreshing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedCategory">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedCategory" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SearchText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SearchText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EditingCategory">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EditingCategory" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.Courses">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "Courses" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.FilteredCourses">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "FilteredCourses" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.SelectedCourse">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "SelectedCourse" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangingArgs.EditingCourse">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangingEventArgs"/> instance for all "EditingCourse" generated properties.</summary>
+        </member>
+        <member name="T:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs">
+            <summary>
+            A helper type providing cached, reusable <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instances
+            for all properties generated with <see cref="T:CommunityToolkit.Mvvm.ComponentModel.ObservablePropertyAttribute"/>.
+            </summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CategoryID">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CategoryID" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CategoryName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CategoryName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CategoryDescription">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CategoryDescription" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CourseID">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CourseID" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CourseName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CourseName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CourseImageName">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CourseImageName" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CourseDuration">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CourseDuration" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CourseDescription">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CourseDescription" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.CourseCategory">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "CourseCategory" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.PageTitle">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "PageTitle" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Categories">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Categories" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FilteredCategories">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FilteredCategories" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsRefreshing">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsRefreshing" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.IsBusy">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "IsBusy" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedCategory">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedCategory" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SearchText">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SearchText" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EditingCategory">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EditingCategory" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.Courses">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "Courses" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.FilteredCourses">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "FilteredCourses" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.SelectedCourse">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "SelectedCourse" generated properties.</summary>
+        </member>
+        <member name="F:CommunityToolkit.Mvvm.ComponentModel.__Internals.__KnownINotifyPropertyChangedArgs.EditingCourse">
+            <summary>The cached <see cref="T:System.ComponentModel.PropertyChangedEventArgs"/> instance for all "EditingCourse" generated properties.</summary>
+        </member>
+    </members>
+</doc>

@@ -57,6 +57,21 @@
 	</ItemGroup>
 
 	<ItemGroup>
+	  <None Remove="Resources\Images\aspcore.png" />
+	  <None Remove="Resources\Images\cat.jpg" />
+	  <None Remove="Resources\Images\category.png" />
+	  <None Remove="Resources\Images\course.png" />
+	  <None Remove="Resources\Images\default_image.jpg" />
+	  <None Remove="Resources\Images\delete.png" />
+	  <None Remove="Resources\Images\home.png" />
+	  <None Remove="Resources\Images\logo.png" />
+	  <None Remove="Resources\Images\maui.png" />
+	  <None Remove="Resources\Images\menu.png" />
+	  <None Remove="Resources\Images\update.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.1.0" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.3.2" />
 		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
 		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
@@ -64,10 +79,22 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\AddCategory.xaml">
+	  <Compile Update="Pages\AddEditCourse.xaml.cs">
+	    <DependentUpon>AddEditCourse.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\AddEditCategory.xaml.cs">
+	    <DependentUpon>AddEditCategory.xaml</DependentUpon>
+	  </Compile>
+	  <Compile Update="Pages\LoginPage.xaml.cs">
+	    <DependentUpon>LoginPage.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="Pages\AddEditCategory.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
-	  <MauiXaml Update="Pages\AddCourse.xaml">
+	  <MauiXaml Update="Pages\AddEditCourse.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Categories.xaml">
@@ -77,6 +104,9 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="Pages\Home.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Pages\LoginPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

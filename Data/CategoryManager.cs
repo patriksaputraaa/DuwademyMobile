@@ -82,7 +82,7 @@ namespace DuwademyMobile.Data
 
         }
 
-        public static async Task Delete(string categoryId)
+        public static async Task Delete(int categoryId)
         {
             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
                 return;

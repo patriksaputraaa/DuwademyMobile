@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace DuwademyMobile.Data
 {
+    [Serializable]
     public class Category
     {
         [JsonPropertyName("categoryId")]

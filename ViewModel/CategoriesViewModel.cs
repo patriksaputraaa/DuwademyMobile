@@ -1,76 +1,118 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using CommunityToolkit.Mvvm.Messaging;
 using System.Collections.ObjectModel;
-using System.ComponentModel;
 using DuwademyMobile.Data;
+using System.Windows.Input;
+using System.Diagnostics;
 
 namespace DuwademyMobile.ViewModel
 {
     public partial class CategoriesViewModel : ObservableObject
     {
-        [ObservableProperty]
-        ObservableCollection<Category> _categories;
-
-        [ObservableProperty]
-        bool _isRefreshing = false;
-
-        [ObservableProperty]
-        bool _isBusy = false;
-
-        [ObservableProperty]
-        Category _selectedCategory;
+        // Observable properties
+        [ObservableProperty] string pageTitle;
+        [ObservableProperty] ObservableCollection<Category> categories = new();
+        [ObservableProperty] ObservableCollection<Category> filteredCategories = new();
+        [ObservableProperty] bool isRefreshing = false;
+        [ObservableProperty] bool isBusy = false;
+        [ObservableProperty] Category selectedCategory;
+        [ObservableProperty] string searchText = string.Empty;
+        [ObservableProperty] Category editingCategory = new();
+        public ICommand LoadCategoriesCommand { get; }
+        public int CategoryID { get; private set; }
+        public string CategoryName { get; private set; }
+        public string CategoryDescription { get; private set; }
 
         public CategoriesViewModel()
         {
-            _categories = new ObservableCollection<Category>();
-
-            WeakReferenceMessenger.Default.Register<RefreshMessage>(this, async (r, m) =>
-            {
-                await LoadData();
-            });
-
-            Task.Run(LoadData);
+            LoadCategoriesCommand = new Command(async () => await LoadData());
         }
+        public void Initialize(Category category = null)
+        {
+            if (category == null)  // Add category
+            {
+                PageTitle = "Add Category";
+                EditingCategory = new Category(); // Create a new instance for adding
+            }
+            else  // Edit category
+            {
+                PageTitle = "Edit Category";
+                EditingCategory = category; // Use the passed category for editing
+                CategoryID = category.Id; // Assuming you have a property for ID in the ViewModel
+                CategoryName = category.Name; // Assuming you have a property for Name
+                CategoryDescription = category.Description; // Assuming you have a property for Description
+            }
+        }
+
 
         [RelayCommand]
-        async Task PartSelected()
+        public async Task SaveCategory()
         {
-            if (SelectedCategory == null)
-                return;
+            // Ensure the editingCategory is set correctly
+            if (editingCategory == null || string.IsNullOrWhiteSpace(editingCategory.Name)) return;
 
-            var navigationParameter = new Dictionary<string, object>()
-        {
-            { "part", SelectedCategory }
-        };
+            // Check if this is a new category (assuming Id is 0 for new categories)
+            try
+            {
+                // Adding a new category
+                if (editingCategory.Id == 0)
+                {
+                    var addedCategory = await CategoryManager.Add(editingCategory.Name, editingCategory.Description);
+                    if (addedCategory != null)
+                    {
+                        categories.Add(addedCategory);
+                        await LoadData(); // Refresh the category list
+                        await Shell.Current.GoToAsync(".."); // Navigate back
+                    }
+                    else
+                    {
+                        Debug.WriteLine("Failed to add the category.");
+                    }
+                }
+                else
+                {
+                    // Updating an existing category
+                    await CategoryManager.Update(editingCategory);
+                    await LoadData(); // Refresh the category list
+                    await Shell.Current.GoToAsync(".."); // Navigate back
+                }
+            }
+            catch (Exception ex)
+            {
+                // Handle or log exception
+                Debug.WriteLine($"Error saving category: {ex.Message}");
+            }
 
-            await Shell.Current.GoToAsync("addcategory", navigationParameter);
-
-            MainThread.BeginInvokeOnMainThread(() => SelectedCategory = null);
         }
+
 
         [RelayCommand]
         async Task LoadData()
         {
-            if (IsBusy)
-                return;
+            if (IsBusy) return;
 
             try
             {
                 IsRefreshing = true;
                 IsBusy = true;
 
-                var categoriesCollection = await CategoryManager.GetAll();
+                // Ensure this is the correct endpoint
+                var categoryList = await CategoryManager.GetAll();
 
                 MainThread.BeginInvokeOnMainThread(() =>
                 {
-                    Category.Clear();
-
-                    foreach (Category part in categoriesCollection)
+                    Categories.Clear();
+                    foreach (var category in categoryList)
                     {
-                        Category.Add(part);
+                        Categories.Add(category);
                     }
+                    FilterCategories();
                 });
+            }
+            catch (HttpRequestException ex)
+            {
+                // Log the error
+                Debug.WriteLine($"Error fetching categories: {ex.Message}");
             }
             finally
             {
@@ -79,10 +121,75 @@ namespace DuwademyMobile.ViewModel
             }
         }
 
+
+        [RelayCommand]
+        void FilterCategories()
+        {
+            FilteredCategories.Clear();
+            var query = searchText?.Trim().ToLower();
+            foreach (var category in Categories)
+            {
+                if (string.IsNullOrEmpty(query) || category.Name.ToLower().Contains(query))
+                {
+                    FilteredCategories.Add(category);
+                }
+            }
+        }
+
+        [RelayCommand]
+        async Task UpdateCategory(Category category)
+        {
+            if (category == null || IsBusy) return;
+
+            try
+            {
+                IsBusy = true;
+                // Navigate to the AddEditCategory page for editing the selected category
+                await Shell.Current.GoToAsync("addeditcategory", new Dictionary<string, object> { { "category", category } });
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
+        [RelayCommand]
+        async Task DeleteCategory(Category category)
+        {
+            if (category == null || IsBusy) return;
+
+            try
+            {
+                IsBusy = true;
+                await CategoryManager.Delete(category.Id);
+                Categories.Remove(category);
+                FilterCategories();
+            }
+            finally
+            {
+                IsBusy = false;
+            }
+        }
+
         [RelayCommand]
         async Task AddNewCategory()
         {
-            await Shell.Current.GoToAsync("addcategory");
+            // Initialize for adding a new category and navigate to the AddEditCategory page
+            Initialize(null); // Call Initialize with null to set up for adding a new category
+            await Shell.Current.GoToAsync("addeditcategory");
         }
+
+        [RelayCommand]
+        async Task CategorySelected()
+        {
+            if (SelectedCategory == null) return;
+
+            // Navigate to the add/edit page with the selected category
+            var parameters = new Dictionary<string, object> { { "category", SelectedCategory } };
+            await Shell.Current.GoToAsync("addeditcategory", parameters);
+            SelectedCategory = null; // Reset the selected category
+        }
+
+
     }
 }

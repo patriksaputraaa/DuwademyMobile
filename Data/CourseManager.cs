@@ -76,23 +76,58 @@ namespace DuwademyMobile.Data
         public static async Task Update(Course course)
         {
             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
-                return;
-            HttpRequestMessage msg = new(HttpMethod.Put, $"{Url}Courses/{course.Id}");
-            msg.Content = JsonContent.Create<Course>(course);
-            var client = await GetClient();
-            var response = await client.SendAsync(msg);
-            response.EnsureSuccessStatusCode();
+            {
+                // Handle offline case (optional: throw an exception, log, or notify the user)
+                throw new InvalidOperationException("No internet connection available.");
+            }
 
+            try
+            {
+                HttpRequestMessage msg = new(HttpMethod.Put, $"{Url}Courses/{course.Id}");
+                msg.Content = JsonContent.Create(course);
+                var client = await GetClient();
+
+                var response = await client.SendAsync(msg);
+                response.EnsureSuccessStatusCode();
+            }
+            catch (HttpRequestException ex)
+            {
+                // Handle HTTP request exceptions (e.g., logging, user notifications)
+                throw new Exception("Error updating course. Please try again later.", ex);
+            }
+            catch (Exception ex)
+            {
+                // Handle any other exceptions
+                throw new Exception("An unexpected error occurred. Please try again later.", ex);
+            }
         }
 
-        public static async Task Delete(string courseId)
+        public static async Task Delete(int courseId)
         {
             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
                 return;
+
             HttpRequestMessage msg = new(HttpMethod.Delete, $"{Url}Courses/{courseId}");
             var client = await GetClient();
-            var response = await client.SendAsync(msg);
-            response.EnsureSuccessStatusCode();
+            try
+            {
+                var response = await client.SendAsync(msg);
+                response.EnsureSuccessStatusCode();
+            }
+            catch (HttpRequestException ex)
+            {
+                // Capture the response content if there was an error
+                string responseContent = ex.Message;
+                if (ex.InnerException is HttpRequestException innerEx && innerEx.Data.Contains("ResponseContent"))
+                {
+                    responseContent = innerEx.Data["ResponseContent"] as string ?? "No response content";
+                }
+                Console.WriteLine($"Error deleting course with ID {courseId}: {ex.Message}");
+                Console.WriteLine($"Response content: {responseContent}");
+                throw; // Rethrow to handle it upstream if needed
+            }
         }
+
+
     }
 }
