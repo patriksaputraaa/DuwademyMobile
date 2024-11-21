@@ -1,4 +1,5 @@
 ﻿using DuwademyMobile.Pages;
+using Microsoft.Maui.Controls;
 
 namespace DuwademyMobile
 {
@@ -8,8 +9,12 @@ namespace DuwademyMobile
         {
             InitializeComponent();
 
-            Routing.RegisterRoute("addeditcourse", typeof(AddEditCourse));
-            Routing.RegisterRoute("addeditcategory", typeof(AddEditCategory));
+            //routing.RegisterRoute(nameof(AddCategoryPage), typeof(AddCategoryPage));
+            //routing.RegisterRoute(nameof(UpdateCategoryPage), typeof(UpdateCategoryPage));
+            Routing.RegisterRoute(nameof(AddCategoryPage), typeof(AddCategoryPage));
+            Routing.RegisterRoute(nameof(UpdateCategoryPage), typeof(UpdateCategoryPage));
+
+
 
         }
     }

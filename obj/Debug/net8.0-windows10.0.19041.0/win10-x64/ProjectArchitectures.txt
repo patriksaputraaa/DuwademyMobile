@@ -1,1 +1,0 @@
-D:\GitHub\ProgMob\DuwademyMobile\DuwademyMobile.csproj;x64

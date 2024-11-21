@@ -1,0 +1,19 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DuwademyMobile.Pages.UpdateCategoryPage"
+             xmlns:data="clr-namespace:DuwademyMobile.Data"
+             Title="Update Category">
+
+    <StackLayout Padding="20">
+        <Label Text="Update Category" FontSize="24" HorizontalOptions="Center" />
+
+        <StackLayout Padding="10">
+            <Entry Text="{Binding CategoryName}" Placeholder="Edit category name" />
+            <Entry Text="{Binding CategoryDescription}" Placeholder="Edit category description" />
+
+            <Button Text="Save" Command="{Binding UpdateCategoryCommand}" />
+            <Button Text="Delete" Command="{Binding DeleteCategoryCommand}" />
+            <Button Text="Cancel" Command="{Binding CancelCommand}" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>

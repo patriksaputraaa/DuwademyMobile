@@ -1,105 +1,46 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
-using System.Collections.ObjectModel;
-using DuwademyMobile.Data;
-using System.Windows.Input;
-using System.Diagnostics;
 using CommunityToolkit.Mvvm.Messaging;
+using DuwademyMobile.Data;
+using DuwademyMobile.Pages;
+using System.Collections.ObjectModel;
+using System.Diagnostics;
+using System.Windows.Input;
+
 
 namespace DuwademyMobile.ViewModel
 {
     public partial class CategoriesViewModel : ObservableObject
     {
         // Observable properties
-        [ObservableProperty] string pageTitle;
-        [ObservableProperty] ObservableCollection<Category> categories = new();
-        [ObservableProperty] ObservableCollection<Category> filteredCategories = new();
-        [ObservableProperty] bool isRefreshing = false;
-        [ObservableProperty] bool isBusy = false;
-        [ObservableProperty] Category selectedCategory;
-        [ObservableProperty] string searchText = string.Empty;
-        [ObservableProperty] Category editingCategory = new();
+        [ObservableProperty]
+        private ObservableCollection<Category> categories = new();
+
+        [ObservableProperty]
+        private ObservableCollection<Category> filteredCategories = new();
+
+        [ObservableProperty]
+        private bool isRefreshing;
+
+        [ObservableProperty]
+        private bool isBusy;
+
+        [ObservableProperty]
+        private string searchText = string.Empty;
+
         public ICommand LoadCategoriesCommand { get; }
-        public int CategoryID { get; private set; }
-        public string CategoryName { get; private set; }
-        public string CategoryDescription { get; private set; }
 
         public CategoriesViewModel()
         {
+            // Register for refresh messages
             WeakReferenceMessenger.Default.Register<RefreshMessage>(this, (r, m) =>
             {
                 if (m.ShouldRefresh)
-                    LoadCategoriesCommand.Execute(null); // Refresh the categories list
+                    LoadCategoriesCommand.Execute(null);
             });
+
+            LoadCategoriesCommand = new AsyncRelayCommand(LoadData);
         }
-
-        public class RefreshMessage
-        {
-            public bool ShouldRefresh { get; }
-
-            public RefreshMessage(bool shouldRefresh)
-            {
-                ShouldRefresh = shouldRefresh;
-            }
-        }
-        public void Initialize(Category category = null)
-        {
-            if (category == null)  // Add category
-            {
-                PageTitle = "Add Category";
-                EditingCategory = new Category(); // Create a new instance for adding
-            }
-            else  // Edit category
-            {
-                PageTitle = "Edit Category";
-                EditingCategory = category; // Use the passed category for editing
-                CategoryID = category.Id; // Assuming you have a property for ID in the ViewModel
-                CategoryName = category.Name; // Assuming you have a property for Name
-                CategoryDescription = category.Description; // Assuming you have a property for Description
-            }
-        }
-
-
-        [RelayCommand]
-        public async Task SaveCategory()
-        {
-            // Ensure the editingCategory is set correctly
-            if (editingCategory == null || string.IsNullOrWhiteSpace(editingCategory.Name)) return;
-
-            // Check if this is a new category (assuming Id is 0 for new categories)
-            try
-            {
-                // Adding a new category
-                if (editingCategory.Id == 0)
-                {
-                    var addedCategory = await CategoryManager.Add(editingCategory.Name, editingCategory.Description);
-                    if (addedCategory != null)
-                    {
-                        categories.Add(addedCategory);
-                        await LoadData(); // Refresh the category list
-                        await Shell.Current.GoToAsync(".."); // Navigate back
-                    }
-                    else
-                    {
-                        Debug.WriteLine("Failed to add the category.");
-                    }
-                }
-                else
-                {
-                    // Updating an existing category
-                    await CategoryManager.Update(editingCategory);
-                    await LoadData(); // Refresh the category list
-                    await Shell.Current.GoToAsync(".."); // Navigate back
-                }
-            }
-            catch (Exception ex)
-            {
-                // Handle or log exception
-                Debug.WriteLine($"Error saving category: {ex.Message}");
-            }
-
-        }
-
 
         [RelayCommand]
         async Task LoadData()
@@ -111,7 +52,6 @@ namespace DuwademyMobile.ViewModel
                 IsRefreshing = true;
                 IsBusy = true;
 
-                // Ensure this is the correct endpoint
                 var categoryList = await CategoryManager.GetAll();
 
                 MainThread.BeginInvokeOnMainThread(() =>
@@ -126,8 +66,8 @@ namespace DuwademyMobile.ViewModel
             }
             catch (HttpRequestException ex)
             {
-                // Log the error
                 Debug.WriteLine($"Error fetching categories: {ex.Message}");
+                await Application.Current.MainPage.DisplayAlert("Error", "Failed to load categories. Please try again.", "OK");
             }
             finally
             {
@@ -136,12 +76,12 @@ namespace DuwademyMobile.ViewModel
             }
         }
 
-
         [RelayCommand]
         void FilterCategories()
         {
+            var query = SearchText?.Trim().ToLower();
+
             FilteredCategories.Clear();
-            var query = searchText?.Trim().ToLower();
             foreach (var category in Categories)
             {
                 if (string.IsNullOrEmpty(query) || category.Name.ToLower().Contains(query))
@@ -152,15 +92,23 @@ namespace DuwademyMobile.ViewModel
         }
 
         [RelayCommand]
-        async Task UpdateCategory(Category category)
+        async Task AddCategory()
+        {
+            // Navigate to the AddCategoryPage
+            await Shell.Current.GoToAsync(nameof(AddCategoryPage));
+        }
+
+        [RelayCommand]
+        async Task EditCategory(Category category)
         {
             if (category == null || IsBusy) return;
 
             try
             {
                 IsBusy = true;
-                // Navigate to the AddEditCategory page for editing the selected category
-                await Shell.Current.GoToAsync("addeditcategory", new Dictionary<string, object> { { "Category", category } });
+                // Navigate to the UpdateCategoryPage with the selected category
+                var parameters = new Dictionary<string, object> { { "Category", category } };
+                await Shell.Current.GoToAsync(nameof(UpdateCategoryPage), parameters);
             }
             finally
             {
@@ -173,12 +121,20 @@ namespace DuwademyMobile.ViewModel
         {
             if (category == null || IsBusy) return;
 
+            var confirm = await Application.Current.MainPage.DisplayAlert("Confirm Delete", $"Are you sure you want to delete \"{category.Name}\"?", "Yes", "No");
+            if (!confirm) return;
+
             try
             {
                 IsBusy = true;
                 await CategoryManager.Delete(category.Id);
                 Categories.Remove(category);
                 FilterCategories();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine($"Error deleting category: {ex.Message}");
+                await Application.Current.MainPage.DisplayAlert("Error", "Failed to delete the category. Please try again.", "OK");
             }
             finally
             {
@@ -187,24 +143,20 @@ namespace DuwademyMobile.ViewModel
         }
 
         [RelayCommand]
-        async Task AddNewCategory()
+        void RefreshData()
         {
-            // Initialize for adding a new category and navigate to the AddEditCategory page
-            Initialize(null); // Call Initialize with null to set up for adding a new category
-            await Shell.Current.GoToAsync("addeditcategory");
+            LoadCategoriesCommand.Execute(null);
         }
 
-        [RelayCommand]
-        async Task CategorySelected()
+        public class RefreshMessage
         {
-            if (SelectedCategory == null) return;
+            public bool ShouldRefresh { get; }
 
-            // Navigate to the add/edit page with the selected category
-            var parameters = new Dictionary<string, object> { { "category", SelectedCategory } };
-            await Shell.Current.GoToAsync("addeditcategory", parameters);
-            SelectedCategory = null; // Reset the selected category
+            public RefreshMessage(bool shouldRefresh)
+            {
+                ShouldRefresh = shouldRefresh;
+            }
         }
-
 
     }
 }
