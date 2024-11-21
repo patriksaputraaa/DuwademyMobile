@@ -5,58 +5,59 @@ using DuwademyMobile.Data;
 
 namespace DuwademyMobile.ViewModel
 {
+    [QueryProperty(nameof(Category), "Category")]
     public partial class AddEditCategoryViewModel : ObservableObject
     {
         [ObservableProperty]
-        int _categoryID;
+        private int categoryID;
 
         [ObservableProperty]
-        string? _categoryName;
+        private string? categoryName;
 
         [ObservableProperty]
-        string? _categoryDescription;
+        private string? categoryDescription;
+
+        private Category? category;
+
+        public Category? Category
+        {
+            get => category;
+            set
+            {
+                category = value;
+                Initialize(category);
+            }
+        }
 
         public void Initialize(Category? category)
         {
             if (category != null)
             {
-                // We are editing an existing category
-                CategoryID = category.Id; // Set the ID for the existing category
+                CategoryID = category.Id;
                 CategoryName = category.Name;
                 CategoryDescription = category.Description;
             }
             else
             {
-                // We are adding a new category
-                CategoryID = 0; // New category ID
+                CategoryID = 0;
                 CategoryName = string.Empty;
                 CategoryDescription = string.Empty;
             }
         }
 
-
         [RelayCommand]
-        async Task SaveData()
+        public async Task SaveData()
         {
-            // Ensure we have valid data
-            if (string.IsNullOrWhiteSpace(CategoryName))
-            {
-                // Handle error, e.g., show a message to the user
-                return;
-            }
+            if (string.IsNullOrWhiteSpace(CategoryName)) return;
 
             if (CategoryID <= 0)
-            {
-                await InsertCategory(); // Add new category
-            }
+                await InsertCategory();
             else
-            {
-                await UpdateCategory(); // Update existing category
-            }
+                await UpdateCategory();
         }
 
         [RelayCommand]
-        async Task InsertCategory()
+        public async Task InsertCategory()
         {
             var addedCategory = await CategoryManager.Add(CategoryName, CategoryDescription);
             WeakReferenceMessenger.Default.Send(new RefreshMessage(true));
@@ -64,11 +65,13 @@ namespace DuwademyMobile.ViewModel
         }
 
         [RelayCommand]
-        async Task UpdateCategory()
+        public async Task UpdateCategory()
         {
+            if (CategoryID <= 0) return;
+
             var categoryToUpdate = new Category
             {
-                Id = CategoryID, // Ensure we're using the correct ID
+                Id = CategoryID,
                 Name = CategoryName,
                 Description = CategoryDescription,
             };
@@ -79,19 +82,19 @@ namespace DuwademyMobile.ViewModel
         }
 
         [RelayCommand]
-        async Task DeleteCategory()
+        public async Task DeleteCategory()
         {
-            if (CategoryID <= 0) return; // Can't delete if the ID is invalid
+            if (CategoryID <= 0) return;
 
-            await CategoryManager.Delete(CategoryID); // Delete the category
-            WeakReferenceMessenger.Default.Send(new RefreshMessage(true)); // Notify of refresh
-            await Shell.Current.GoToAsync(".."); // Navigate back
+            await CategoryManager.Delete(CategoryID);
+            WeakReferenceMessenger.Default.Send(new RefreshMessage(true));
+            await Shell.Current.GoToAsync("..");
         }
 
         [RelayCommand]
-        async Task DoneEditing()
+        public async Task DoneEditing()
         {
-            await Shell.Current.GoToAsync(".."); // Navigate back without saving
+            await Shell.Current.GoToAsync("..");
         }
     }
 }

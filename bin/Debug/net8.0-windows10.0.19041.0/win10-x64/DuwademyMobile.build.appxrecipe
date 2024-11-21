@@ -70,14 +70,14 @@
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\maui.scale-100.png">
       <PackagePath>maui.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\default_image.scale-100.jpg">
-      <PackagePath>default_image.scale-100.jpg</PackagePath>
+    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\aspcore.scale-100.png">
+      <PackagePath>aspcore.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\menu.scale-100.png">
       <PackagePath>menu.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-100.png">
-      <PackagePath>home.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\delete.scale-100.png">
+      <PackagePath>delete.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\update.scale-100.png">
       <PackagePath>update.scale-100.png</PackagePath>
@@ -223,14 +223,14 @@
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-100.png">
+      <PackagePath>home.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\default_image.scale-100.jpg">
+      <PackagePath>default_image.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\course.scale-100.png">
       <PackagePath>course.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\delete.scale-100.png">
-      <PackagePath>delete.scale-100.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\aspcore.scale-100.png">
-      <PackagePath>aspcore.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>
@@ -250,10 +250,10 @@
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\bin\Debug\net8.0-windows10.0.19041.0\win10-x64\DuwademyMobile.deps.json">
       <PackagePath>DuwademyMobile.deps.json</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\hp394\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.44\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
+    <AppxPackagedFile Include="C:\Users\hp394\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.53\lib\net8.0\Microsoft.Windows.SDK.NET.dll">
       <PackagePath>Microsoft.Windows.SDK.NET.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\hp394\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.44\lib\net8.0\WinRT.Runtime.dll">
+    <AppxPackagedFile Include="C:\Users\hp394\.nuget\packages\microsoft.windows.sdk.net.ref\10.0.19041.53\lib\net8.0\WinRT.Runtime.dll">
       <PackagePath>WinRT.Runtime.dll</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\hp394\.nuget\packages\communitytoolkit.maui\9.1.0\lib\net8.0-windows10.0.19041\CommunityToolkit.Maui.dll">

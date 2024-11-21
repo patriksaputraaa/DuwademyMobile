@@ -18,7 +18,7 @@ namespace DuwademyMobile.Pages
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            _viewModel.LoadCategoriesCommand.Execute(null); // This will now call LoadData correctly.
+            _viewModel?.LoadCategoriesCommand.Execute(null); // This will now call LoadData correctly.
         }
 
 

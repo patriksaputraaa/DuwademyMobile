@@ -13,13 +13,13 @@
             <inheritdoc/>
         </member>
         <member name="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.CategoryID">
-            <inheritdoc cref="F:DuwademyMobile.ViewModel.AddEditCategoryViewModel._categoryID"/>
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.AddEditCategoryViewModel.categoryID"/>
         </member>
         <member name="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.CategoryName">
-            <inheritdoc cref="F:DuwademyMobile.ViewModel.AddEditCategoryViewModel._categoryName"/>
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.AddEditCategoryViewModel.categoryName"/>
         </member>
         <member name="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.CategoryDescription">
-            <inheritdoc cref="F:DuwademyMobile.ViewModel.AddEditCategoryViewModel._categoryDescription"/>
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.AddEditCategoryViewModel.categoryDescription"/>
         </member>
         <member name="F:DuwademyMobile.ViewModel.AddEditCategoryViewModel.saveDataCommand">
             <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.AddEditCategoryViewModel.SaveDataCommand"/>.</summary>
@@ -136,6 +136,7 @@
             <inheritdoc/>
             <inheritdoc/>
             <inheritdoc/>
+            <inheritdoc/>
         </member>
         <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.PageTitle">
             <inheritdoc cref="F:DuwademyMobile.ViewModel.CoursesViewModel.pageTitle"/>
@@ -160,6 +161,9 @@
         </member>
         <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.EditingCourse">
             <inheritdoc cref="F:DuwademyMobile.ViewModel.CoursesViewModel.editingCourse"/>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.Categories">
+            <inheritdoc cref="F:DuwademyMobile.ViewModel.CoursesViewModel.categories"/>
         </member>
         <member name="F:DuwademyMobile.ViewModel.CoursesViewModel.saveCourseCommand">
             <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CoursesViewModel.SaveCourseCommand"/>.</summary>
@@ -202,6 +206,12 @@
         </member>
         <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.UpdateCourseCommand">
             <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand`1"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CoursesViewModel.UpdateCourse(DuwademyMobile.Data.Course)"/>.</summary>
+        </member>
+        <member name="F:DuwademyMobile.ViewModel.CoursesViewModel.cancelCommand">
+            <summary>The backing field for <see cref="P:DuwademyMobile.ViewModel.CoursesViewModel.CancelCommand"/>.</summary>
+        </member>
+        <member name="P:DuwademyMobile.ViewModel.CoursesViewModel.CancelCommand">
+            <summary>Gets an <see cref="T:CommunityToolkit.Mvvm.Input.IAsyncRelayCommand"/> instance wrapping <see cref="M:DuwademyMobile.ViewModel.CoursesViewModel.Cancel"/>.</summary>
         </member>
         <member name="T:DuwademyMobile.ViewModel.HomeViewModel">
             <inheritdoc/>

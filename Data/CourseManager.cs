@@ -77,7 +77,6 @@ namespace DuwademyMobile.Data
         {
             if (Connectivity.Current.NetworkAccess != NetworkAccess.Internet)
             {
-                // Handle offline case (optional: throw an exception, log, or notify the user)
                 throw new InvalidOperationException("No internet connection available.");
             }
 
@@ -92,12 +91,10 @@ namespace DuwademyMobile.Data
             }
             catch (HttpRequestException ex)
             {
-                // Handle HTTP request exceptions (e.g., logging, user notifications)
                 throw new Exception("Error updating course. Please try again later.", ex);
             }
             catch (Exception ex)
             {
-                // Handle any other exceptions
                 throw new Exception("An unexpected error occurred. Please try again later.", ex);
             }
         }

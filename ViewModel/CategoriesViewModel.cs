@@ -4,6 +4,7 @@ using System.Collections.ObjectModel;
 using DuwademyMobile.Data;
 using System.Windows.Input;
 using System.Diagnostics;
+using CommunityToolkit.Mvvm.Messaging;
 
 namespace DuwademyMobile.ViewModel
 {
@@ -25,7 +26,21 @@ namespace DuwademyMobile.ViewModel
 
         public CategoriesViewModel()
         {
-            LoadCategoriesCommand = new Command(async () => await LoadData());
+            WeakReferenceMessenger.Default.Register<RefreshMessage>(this, (r, m) =>
+            {
+                if (m.ShouldRefresh)
+                    LoadCategoriesCommand.Execute(null); // Refresh the categories list
+            });
+        }
+
+        public class RefreshMessage
+        {
+            public bool ShouldRefresh { get; }
+
+            public RefreshMessage(bool shouldRefresh)
+            {
+                ShouldRefresh = shouldRefresh;
+            }
         }
         public void Initialize(Category category = null)
         {
@@ -145,7 +160,7 @@ namespace DuwademyMobile.ViewModel
             {
                 IsBusy = true;
                 // Navigate to the AddEditCategory page for editing the selected category
-                await Shell.Current.GoToAsync("addeditcategory", new Dictionary<string, object> { { "category", category } });
+                await Shell.Current.GoToAsync("addeditcategory", new Dictionary<string, object> { { "Category", category } });
             }
             finally
             {
