@@ -15,6 +15,7 @@ namespace DuwademyMobile.ViewModel
         // Observable properties
         [ObservableProperty]
         private ObservableCollection<Category> categories = new();
+        [ObservableProperty] Category selectedCategory;
 
         [ObservableProperty]
         private ObservableCollection<Category> filteredCategories = new();
@@ -156,6 +157,15 @@ namespace DuwademyMobile.ViewModel
             {
                 ShouldRefresh = shouldRefresh;
             }
+        }
+
+        [RelayCommand]
+        public async Task CategorySelected()
+        {
+            if (SelectedCategory == null) return;
+
+            // Handle the logic for when a category is selected, e.g., navigate to the edit page
+            await Shell.Current.GoToAsync("addeditcategory", new Dictionary<string, object> { { "Category", SelectedCategory } });
         }
 
     }

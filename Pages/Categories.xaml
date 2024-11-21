@@ -23,7 +23,7 @@
 
         <!-- Add Category Button -->
         <Button Text="Add Category"
-                Command="{Binding AddNewCategoryCommand}"
+                Command="{Binding AddCategoryCommand}"
                 BackgroundColor="LightGreen"
                 TextColor="Black"
                 HorizontalOptions="Fill"

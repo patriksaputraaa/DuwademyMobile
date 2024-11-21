@@ -61,11 +61,17 @@
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\f\OpenSans-Semibold.ttf">
       <PackagePath>OpenSans-Semibold.ttf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo.scale-100.png">
-      <PackagePath>logo.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-100.png">
+      <PackagePath>home.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\cat.scale-100.jpg">
       <PackagePath>cat.scale-100.jpg</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\logo.scale-100.png">
+      <PackagePath>logo.scale-100.png</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\delete.scale-100.png">
+      <PackagePath>delete.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\maui.scale-100.png">
       <PackagePath>maui.scale-100.png</PackagePath>
@@ -76,14 +82,14 @@
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\menu.scale-100.png">
       <PackagePath>menu.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\delete.scale-100.png">
-      <PackagePath>delete.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\category.scale-100.png">
+      <PackagePath>category.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\update.scale-100.png">
       <PackagePath>update.scale-100.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\category.scale-100.png">
-      <PackagePath>category.scale-100.png</PackagePath>
+    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\course.scale-100.png">
+      <PackagePath>course.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appiconLargeTile.scale-400.png">
       <PackagePath>appiconLargeTile.scale-400.png</PackagePath>
@@ -223,14 +229,8 @@
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\appicon.ico">
       <PackagePath>appicon.ico</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\home.scale-100.png">
-      <PackagePath>home.scale-100.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\default_image.scale-100.jpg">
       <PackagePath>default_image.scale-100.jpg</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\course.scale-100.png">
-      <PackagePath>course.scale-100.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="D:\GitHub\ProgMob\DuwademyMobile\obj\Debug\net8.0-windows10.0.19041.0\win10-x64\resizetizer\r\dotnet_bot.scale-400.png">
       <PackagePath>dotnet_bot.scale-400.png</PackagePath>

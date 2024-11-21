@@ -44,11 +44,11 @@ build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.AddCa
 build_metadata.AdditionalFiles.TargetPath = Pages\AddCategory.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\AddCategory.xaml
 
-[D:/GitHub/ProgMob/DuwademyMobile/Pages/AddEditCourse.xaml]
+[D:/GitHub/ProgMob/DuwademyMobile/Pages/AddCourse.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
-build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.AddEditCourse.xaml
-build_metadata.AdditionalFiles.TargetPath = Pages\AddEditCourse.xaml
-build_metadata.AdditionalFiles.RelativePath = Pages\AddEditCourse.xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.AddCourse.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AddCourse.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AddCourse.xaml
 
 [D:/GitHub/ProgMob/DuwademyMobile/Pages/Categories.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml
@@ -79,6 +79,12 @@ build_metadata.AdditionalFiles.GenKind = Xaml
 build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.UpdateCategory.xaml
 build_metadata.AdditionalFiles.TargetPath = Pages\UpdateCategory.xaml
 build_metadata.AdditionalFiles.RelativePath = Pages\UpdateCategory.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/Pages/UpdateCourse.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.UpdateCourse.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\UpdateCourse.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\UpdateCourse.xaml
 
 [D:/GitHub/ProgMob/DuwademyMobile/Resources/Styles/Colors.xaml]
 build_metadata.AdditionalFiles.GenKind = Xaml

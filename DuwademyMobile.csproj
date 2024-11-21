@@ -82,9 +82,6 @@
 	  <Compile Update="Pages\AddEditCourse.xaml.cs">
 	    <DependentUpon>AddEditCourse.xaml</DependentUpon>
 	  </Compile>
-	  <Compile Update="Pages\AddEditCategory.xaml.cs">
-	    <DependentUpon>AddEditCategory.xaml</DependentUpon>
-	  </Compile>
 	  <Compile Update="Pages\LoginPage.xaml.cs">
 	    <DependentUpon>LoginPage.xaml</DependentUpon>
 	  </Compile>
@@ -94,9 +91,6 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <MauiXaml Update="Pages\AddEditCategory.xaml">
-	    <Generator>MSBuild:Compile</Generator>
-	  </MauiXaml>
 	  <MauiXaml Update="Pages\AddEditCourse.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
