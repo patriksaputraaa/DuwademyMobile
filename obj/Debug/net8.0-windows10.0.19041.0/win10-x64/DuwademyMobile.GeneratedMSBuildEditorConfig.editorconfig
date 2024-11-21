@@ -1,0 +1,99 @@
+is_global = true
+build_property.MvvmToolkitEnableINotifyPropertyChangingSupport = true
+build_property.TargetFramework = net8.0-windows10.0.19041.0
+build_property.TargetPlatformMinVersion = 10.0.17763.0
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 9A19103F-16F7-4668-BE54-9A1E7A4F7556
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = DuwademyMobile
+build_property.ProjectDir = D:\GitHub\ProgMob\DuwademyMobile\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.CsWinRTAotOptimizerEnabled = true
+build_property.CsWinRTAotExportsEnabled = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptIn = 
+build_property.CsWinRTRcwFactoryFallbackGeneratorForceOptOut = 
+build_property.CsWinRTCcwLookupTableGeneratorEnabled = true
+build_property.CsWinRTMergeReferencedActivationFactories = 
+build_property.CsWinRTAotWarningLevel = 
+
+[D:/GitHub/ProgMob/DuwademyMobile/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/Pages/AddCategory.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.AddCategory.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AddCategory.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AddCategory.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/Pages/AddCourse.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.AddCourse.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\AddCourse.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\AddCourse.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/Pages/Categories.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.Categories.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Categories.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Categories.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/Pages/Courses.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.Courses.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Courses.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Courses.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/Pages/Home.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.Home.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\Home.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\Home.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/Pages/LoginPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.LoginPage.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\LoginPage.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\LoginPage.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/Pages/UpdateCategory.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.UpdateCategory.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\UpdateCategory.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\UpdateCategory.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/Pages/UpdateCourse.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Pages.UpdateCourse.xaml
+build_metadata.AdditionalFiles.TargetPath = Pages\UpdateCourse.xaml
+build_metadata.AdditionalFiles.RelativePath = Pages\UpdateCourse.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[D:/GitHub/ProgMob/DuwademyMobile/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = DuwademyMobile.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml

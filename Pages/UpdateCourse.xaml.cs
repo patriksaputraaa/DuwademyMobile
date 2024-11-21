@@ -14,7 +14,7 @@ public partial class UpdateCourse : ContentPage
     {
         if (e.SelectedItem is Course selectedCourse)
         {
-            await Navigation.PushAsync(new UpdateCoursePage
+            await Navigation.PushAsync(new UpdateCourse
             {
                 BindingContext = new UpdateCourseViewModel(selectedCourse)
             });

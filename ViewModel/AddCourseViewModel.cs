@@ -1,6 +1,10 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using DuwademyMobile.Data;
+using System.Collections.Generic;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json;
 using CommunityToolkit.Mvvm.Messaging;
 
 namespace DuwademyMobile.ViewModels
@@ -22,6 +26,11 @@ namespace DuwademyMobile.ViewModels
         [ObservableProperty]
         Category courseCategory;
 
+        [ObservableProperty]
+        List<Category> categories;
+
+        private readonly HttpClient _httpClient;
+
         // Constructor for Add Course
         public AddCourseViewModel()
         {
@@ -31,6 +40,7 @@ namespace DuwademyMobile.ViewModels
             CourseDuration = 0;
             CourseDescription = string.Empty;
             CourseCategory = null;
+            _httpClient = new HttpClient();
         }
 
         // Command to save the new course
@@ -58,5 +68,19 @@ namespace DuwademyMobile.ViewModels
             await Shell.Current.GoToAsync("..");
         }
 
+        public async Task LoadCategoriesAsync()
+        {
+            try
+            {
+                var response = await _httpClient.GetStringAsync("https://api.example.com/categories"); // Replace with your API URL
+                var categoryList = JsonConvert.DeserializeObject<List<Category>>(response);
+                Categories = categoryList;
+            }
+            catch (Exception ex)
+            {
+                // Handle error (you can display a message or log it)
+                Console.WriteLine($"Error loading categories: {ex.Message}");
+            }
+        }
     }
 }

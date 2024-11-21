@@ -2,6 +2,8 @@
 using CommunityToolkit.Mvvm.Input;
 using DuwademyMobile.Data;
 using CommunityToolkit.Mvvm.Messaging;
+using System.Collections.ObjectModel;
+using Newtonsoft.Json;
 
 namespace DuwademyMobile.ViewModels
 {
@@ -25,9 +27,15 @@ namespace DuwademyMobile.ViewModels
         [ObservableProperty]
         Category courseCategory;
 
+        [ObservableProperty]
+        ObservableCollection<Category> categories;
+
+        private readonly HttpClient _httpClient;
+
         // Constructor for Update Course
         public UpdateCourseViewModel(Course course)
         {
+            _httpClient = new HttpClient();
             // Initialize with the values from the existing course
             CourseID = course.Id;
             CourseName = course.Name;
@@ -35,9 +43,31 @@ namespace DuwademyMobile.ViewModels
             CourseDuration = course.Duration;
             CourseDescription = course.Description;
             CourseCategory = course.Category;
+
+            // Load categories when the page is loaded
+            InitializeCategories();
+        }
+        // Create an async initialization method
+        private async void InitializeCategories()
+        {
+            await LoadCategoriesAsync();
         }
 
-        // Command to save the updated course
+        public async Task LoadCategoriesAsync()
+        {
+            try
+            {
+                var response = await _httpClient.GetStringAsync("https://api.example.com/categories"); // Replace with your API URL
+                var categoryList = JsonConvert.DeserializeObject<List<Category>>(response);
+                Categories = new ObservableCollection<Category>(categoryList);
+            }
+            catch (Exception ex)
+            {
+                // Handle error
+                Console.WriteLine($"Error loading categories: {ex.Message}");
+            }
+        }
+
         [RelayCommand]
         public async Task SaveData()
         {
@@ -53,17 +83,16 @@ namespace DuwademyMobile.ViewModels
                 Category = CourseCategory
             };
 
-            var updatedCourse = await CourseManager.Update(courseToSave);
+            // If Update doesn't return a value, just call it without assignment
+            await CourseManager.Update(courseToSave);
 
-            if (updatedCourse != null)
-            {
-                // Send refresh message
-                WeakReferenceMessenger.Default.Send(new RefreshMessage(true));
+            // Send refresh message
+            WeakReferenceMessenger.Default.Send(new RefreshMessage(true));
 
-                // Navigate back to the previous page
-                await Shell.Current.GoToAsync("..");
-            }
+            // Navigate back to the previous page
+            await Shell.Current.GoToAsync("..");
         }
+
 
         // Command to cancel and go back
         [RelayCommand]
